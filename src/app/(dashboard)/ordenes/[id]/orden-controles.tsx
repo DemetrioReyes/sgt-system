@@ -16,6 +16,7 @@ interface Props {
   clienteNombre: string;
   clienteTelefono: string;
   vehiculoPlaca: string;
+  nombreTaller: string;
 }
 
 function limpiarTelefono(tel: string) {
@@ -34,6 +35,7 @@ export default function OrdenControles({
   clienteNombre,
   clienteTelefono,
   vehiculoPlaca,
+  nombreTaller,
 }: Props) {
   const router = useRouter();
   const [loading, setLoading] = useState('');
@@ -107,7 +109,7 @@ export default function OrdenControles({
                 <Button
                   variant="ghost"
                   onClick={() => enviarWhatsApp(
-                    `Hola ${clienteNombre}, le informamos que su vehículo ${vehiculoPlaca} está en proceso de reparación. Le mantendremos informado del progreso.\n\n— SGT Taller`
+                    `Hola ${clienteNombre}, le informamos que su vehículo ${vehiculoPlaca} está en proceso de reparación. Le mantendremos informado del progreso.\n\n— ${nombreTaller}`
                   )}
                 >
                   <MessageCircle size={16} /> Notificar al cliente
@@ -127,7 +129,7 @@ export default function OrdenControles({
                 <Button
                   variant="ghost"
                   onClick={() => enviarWhatsApp(
-                    `Hola ${clienteNombre}, le informamos que estamos a la espera de un repuesto para su vehículo ${vehiculoPlaca}. Le notificaremos tan pronto lo tengamos.\n\n— SGT Taller`
+                    `Hola ${clienteNombre}, le informamos que estamos a la espera de un repuesto para su vehículo ${vehiculoPlaca}. Le notificaremos tan pronto lo tengamos.\n\n— ${nombreTaller}`
                   )}
                 >
                   <MessageCircle size={16} /> Notificar al cliente
@@ -147,7 +149,7 @@ export default function OrdenControles({
                 <Button
                   variant="primary"
                   onClick={() => enviarWhatsApp(
-                    `Hola ${clienteNombre}, ¡su vehículo ${vehiculoPlaca} está listo para recoger! 🎉\n\nPuede pasar por el taller en nuestro horario de atención.\n\n— SGT Taller`
+                    `Hola ${clienteNombre}, ¡su vehículo ${vehiculoPlaca} está listo para recoger! 🎉\n\nPuede pasar por el taller en nuestro horario de atención.\n\n— ${nombreTaller}`
                   )}
                 >
                   <MessageCircle size={16} /> Notificar al cliente que está listo

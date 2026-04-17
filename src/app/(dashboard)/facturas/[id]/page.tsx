@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Card, CardContent, Badge, Table, Thead, Tbody, Tr, Th, Td } from '@/components/ui';
 import { getFactura } from '@/lib/actions/facturas';
+import { getTallerConfig } from '@/lib/actions/configuracion';
 import FacturaAcciones from './factura-acciones';
 import styles from './factura-detalle.module.css';
 
@@ -22,7 +23,11 @@ export default async function FacturaDetallePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const { data: factura, error } = await getFactura(id);
+  const [{ data: factura, error }, tallerConfig] = await Promise.all([
+    getFactura(id),
+    getTallerConfig().catch(() => ({ nombre_comercial: 'SGT Taller' })),
+  ]);
+  const nombreTaller = tallerConfig.nombre_comercial || 'SGT Taller';
 
   if (error || !factura) notFound();
 
@@ -60,6 +65,7 @@ export default async function FacturaDetallePage({
           clienteTelefono={cliente?.telefono || ''}
           vehiculoPlaca={vehiculo?.placa || ''}
           total={total}
+          nombreTaller={nombreTaller}
         />
       </header>
 

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Badge, Card, CardContent, Table, Thead, Tbody, Tr, Th, Td } from '@/components/ui';
 import { getCotizacion } from '@/lib/actions/cotizaciones';
+import { getTallerConfig } from '@/lib/actions/configuracion';
 import styles from './cotizacion-detalle.module.css';
 import CotizacionDetalleClient from './detalle-client';
 
@@ -24,7 +25,11 @@ export default async function CotizacionDetallePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const { data: cotizacion, error } = await getCotizacion(id);
+  const [{ data: cotizacion, error }, tallerConfig] = await Promise.all([
+    getCotizacion(id),
+    getTallerConfig().catch(() => ({ nombre_comercial: 'SGT Taller' })),
+  ]);
+  const nombreTaller = tallerConfig.nombre_comercial || 'SGT Taller';
 
   if (error || !cotizacion) {
     notFound();
@@ -94,6 +99,7 @@ export default async function CotizacionDetallePage({
             clienteTelefono={cliente?.telefono || ''}
             vehiculoPlaca={vehiculo?.placa || ''}
             total={total}
+            nombreTaller={nombreTaller}
           />
         </div>
       </header>

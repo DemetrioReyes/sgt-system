@@ -11,6 +11,7 @@ interface Props {
   clienteTelefono: string;
   vehiculoPlaca: string;
   total: number;
+  nombreTaller: string;
 }
 
 function formatMoney(amount: number) {
@@ -33,6 +34,7 @@ export default function CotizacionDetalleClient({
   clienteTelefono,
   vehiculoPlaca,
   total,
+  nombreTaller,
 }: Props) {
   const linkPublico = `${window.location.origin}/publico/cotizacion/${cotizacionId}`;
 
@@ -45,7 +47,7 @@ export default function CotizacionDetalleClient({
     linkPublico,
     ``,
     `Quedamos a su orden.`,
-    `— SGT Taller`,
+    `— ${nombreTaller}`,
   ].join('\n');
 
   const whatsappUrl = clienteTelefono

@@ -13,6 +13,7 @@ interface Props {
   clienteTelefono: string;
   vehiculoPlaca: string;
   total: number;
+  nombreTaller: string;
 }
 
 function formatMoney(n: number) {
@@ -26,7 +27,7 @@ function limpiarTelefono(tel: string) {
   return limpio;
 }
 
-export default function FacturaAcciones({ facturaId, estado, saldo, clienteNombre, clienteTelefono, vehiculoPlaca, total }: Props) {
+export default function FacturaAcciones({ facturaId, estado, saldo, clienteNombre, clienteTelefono, vehiculoPlaca, total, nombreTaller }: Props) {
   const router = useRouter();
 
   const linkPublico = `${window.location.origin}/publico/factura/${facturaId}`;
@@ -40,7 +41,7 @@ export default function FacturaAcciones({ facturaId, estado, saldo, clienteNombr
     linkPublico,
     ``,
     `Quedamos a su orden.`,
-    `— SGT Taller`,
+    `— ${nombreTaller}`,
   ].join('\n');
 
   const whatsappUrl = clienteTelefono

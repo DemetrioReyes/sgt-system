@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Card, CardContent, Badge } from '@/components/ui';
 import { getOrden, getMecanicos } from '@/lib/actions/ordenes';
+import { getTallerConfig } from '@/lib/actions/configuracion';
 import OrdenControles from './orden-controles';
 import styles from './orden-detalle.module.css';
 
@@ -19,11 +20,14 @@ export default async function OrdenDetallePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const { data: orden, error } = await getOrden(id);
+  const [{ data: orden, error }, { data: mecanicos }, tallerConfig] = await Promise.all([
+    getOrden(id),
+    getMecanicos(),
+    getTallerConfig().catch(() => ({ nombre_comercial: 'SGT Taller' })),
+  ]);
+  const nombreTaller = tallerConfig.nombre_comercial || 'SGT Taller';
 
   if (error || !orden) notFound();
-
-  const { data: mecanicos } = await getMecanicos();
 
   const cliente = orden.clientes as { id: string; nombre: string; telefono?: string; email?: string } | null;
   const vehiculo = orden.vehiculos as { id: string; placa: string; marca: string; modelo: string; ano?: number } | null;
@@ -62,6 +66,7 @@ export default async function OrdenDetallePage({
             clienteNombre={cliente?.nombre || ''}
             clienteTelefono={cliente?.telefono || ''}
             vehiculoPlaca={vehiculo?.placa || ''}
+            nombreTaller={nombreTaller}
           />
 
           {/* Progreso */}

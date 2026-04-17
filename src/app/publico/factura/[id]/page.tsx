@@ -16,11 +16,19 @@ export default async function FacturaPublicaPage({
   const { id } = await params;
   const supabase = await createClient();
 
-  const { data: factura } = await supabase
-    .from('facturas')
-    .select('*, clientes(nombre, telefono), vehiculos(placa, marca, modelo, ano)')
-    .eq('id', id)
-    .single();
+  const [{ data: factura }, { data: tallerData }] = await Promise.all([
+    supabase
+      .from('facturas')
+      .select('*, clientes(nombre, telefono), vehiculos(placa, marca, modelo, ano)')
+      .eq('id', id)
+      .single(),
+    supabase
+      .from('taller_config')
+      .select('nombre_comercial')
+      .eq('id', 'default')
+      .single(),
+  ]);
+  const nombreTaller = tallerData?.nombre_comercial || 'Taller';
 
   if (!factura) notFound();
 
@@ -46,7 +54,7 @@ export default async function FacturaPublicaPage({
       <div className={styles.page}>
         <div className={styles.logoSection}>
           <div className={styles.logoIcon}><Car size={32} /></div>
-          <h1 className={styles.tallerName}>SGT Taller</h1>
+          <h1 className={styles.tallerName}>{nombreTaller}</h1>
         </div>
 
         <div className={styles.greeting}>
@@ -131,7 +139,7 @@ export default async function FacturaPublicaPage({
           </CardContent>
         </Card>
 
-        <p className={styles.footer}>SGT — Sistema de Gestión de Taller</p>
+        <p className={styles.footer}>{nombreTaller}</p>
       </div>
     </div>
   );
