@@ -1,0 +1,336 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: var(--content-max-width);
+}
+
+/* Alertas */
+.alertBanner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.alertItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  border: 1px solid var(--color-warning);
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* KPIs */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .kpiGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.kpiCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.kpiIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.kpiInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.kpiValue {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+}
+
+.kpiLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.kpiChange {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.changeUp {
+  color: var(--color-success);
+}
+
+/* Dos columnas */
+.twoColumns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .twoColumns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Secciones */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+/* Vehículos en taller */
+.vehiculoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.vehiculoItem {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.vehiculoItem:hover {
+  background: var(--color-bg-subtle);
+}
+
+.vehiculoMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.vehiculoPlaca {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.vehiculoCliente {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.vehiculoMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.vehiculoTiempo {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.vehiculoMecanico {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  text-align: right;
+}
+
+/* Cotizaciones pendientes */
+.cotizacionList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cotizacionItem {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.cotizacionItem:hover {
+  background: var(--color-bg-subtle);
+}
+
+.cotizacionMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cotizacionNum {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.cotizacionCliente {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.cotizacionMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.cotizacionMonto {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.cotizacionDias {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.reenviarBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  background: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.reenviarBtn:hover {
+  background: var(--color-bg-subtle);
+}
+
+/* Timeline actividad */
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineItem {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  position: relative;
+}
+
+.timelineItem:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: calc(var(--space-3) + 12px);
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.timelineDot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.timelineText {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.timelineTime {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Empty state */
+.emptyState {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}

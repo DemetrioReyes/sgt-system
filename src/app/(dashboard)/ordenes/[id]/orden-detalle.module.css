@@ -1,0 +1,249 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: var(--content-max-width);
+}
+
+.backLink {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.backLink:hover { text-decoration: underline; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.ordenNum {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  flex-wrap: wrap;
+  margin-top: var(--space-1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.mainCol, .sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cardTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+/* Acciones */
+.accionesBtns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.accionesBtns button, .accionesBtns a {
+  width: 100%;
+}
+
+.completadaBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-success-light);
+  color: var(--color-success);
+  border-radius: var(--radius-md);
+}
+
+.completadaBanner strong {
+  display: block;
+  font-size: var(--text-base);
+}
+
+.completadaBanner p {
+  font-size: var(--text-sm);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Progreso */
+.progressBarBig {
+  width: 100%;
+  height: 12px;
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.progressLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+  display: block;
+}
+
+/* Fechas */
+.fechasGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 767px) {
+  .fechasGrid { grid-template-columns: 1fr; }
+}
+
+.fechaLabel {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.fechaValue {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.notas {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  white-space: pre-wrap;
+}
+
+/* Side col */
+.linkPrimary {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.linkPrimary:hover { text-decoration: underline; }
+
+.linkSecondary {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-top: var(--space-1);
+}
+
+.vehiculoDesc {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.mecanicoNombre {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.cotizacionTotal {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+/* Selector mecánico */
+.mecanicoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mecanicoOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  text-align: left;
+  width: 100%;
+}
+
+.mecanicoOption:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-subtle);
+}
+
+.mecanicoSelected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.mecanicoAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+.mecanicoNombreOption {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.mecanicoRol {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.noMecanicos {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--space-4);
+}

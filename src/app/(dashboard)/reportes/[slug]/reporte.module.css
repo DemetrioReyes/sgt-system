@@ -1,0 +1,208 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: var(--content-max-width);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .headerRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+/* ── Filter Form ─────────────────────────────────────────────── */
+
+.filterForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-end;
+}
+
+@media (min-width: 640px) {
+  .filterForm {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: var(--space-3);
+  }
+}
+
+.filterField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.filterLabel {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+}
+
+.filterButton {
+  white-space: nowrap;
+}
+
+.exportButton {
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* ── Summary Cards ───────────────────────────────────────────── */
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .summaryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .summaryGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.summaryCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: center;
+}
+
+.summaryLabel {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.summaryValue {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+}
+
+.summaryValueBig {
+  font-size: 2.5rem;
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+}
+
+/* ── Table helpers ───────────────────────────────────────────── */
+
+.montoPositivo {
+  color: var(--color-success);
+  font-weight: var(--font-medium);
+}
+
+.montoNegativo {
+  color: var(--color-danger);
+  font-weight: var(--font-medium);
+}
+
+.totalRow {
+  font-weight: var(--font-bold);
+  background: var(--color-bg-subtle);
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+/* ── Aging sections ──────────────────────────────────────────── */
+
+.agingSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.agingSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.agingSectionTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+}
+
+.agingSectionMeta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ── Empty state ─────────────────────────────────────────────── */
+
+.empty {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.error {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+/* ── Print styles ────────────────────────────────────────────── */
+
+@media print {
+  .backLink,
+  .filterForm,
+  .exportButton,
+  .actions {
+    display: none !important;
+  }
+
+  .page {
+    max-width: 100%;
+  }
+}

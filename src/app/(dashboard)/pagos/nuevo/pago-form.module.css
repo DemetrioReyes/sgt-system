@@ -1,0 +1,182 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 720px;
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.saldoDisplay {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-md);
+}
+
+.saldoLabel {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.saldoValue {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-danger);
+}
+
+.facturaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.facturaInfo strong {
+  color: var(--color-text);
+}
+
+/* Monto section */
+.montoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.bigInput input {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.quickButtons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.warning {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+/* Metodo section */
+.metodoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 480px) {
+  .metodoGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .metodoGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.metodoOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  background: var(--color-bg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  min-height: var(--touch-min);
+}
+
+.metodoOption:hover {
+  border-color: var(--color-border-hover);
+}
+
+.metodoOptionActive {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.metodoIcon {
+  font-size: var(--text-xl);
+}
+
+.metodoLabel {
+  text-align: center;
+}
+
+.extraFields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .extraFields {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.footerActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .footerActions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

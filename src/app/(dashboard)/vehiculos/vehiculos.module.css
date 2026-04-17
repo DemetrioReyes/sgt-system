@@ -1,0 +1,161 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: var(--content-max-width);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.headerTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.counter {
+  background: var(--color-bg-muted);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .filters {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filterSelect {
+  min-width: 160px;
+}
+
+/* Table - desktop */
+.tableWrapper {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .tableWrapper {
+    display: block;
+  }
+}
+
+/* Cards - mobile */
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .cardList {
+    display: none;
+  }
+}
+
+.vehicleCard {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.vehicleCardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.vehicleCardPlaca {
+  font-weight: var(--font-bold);
+  font-size: var(--text-base);
+}
+
+.vehicleCardMeta {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.vehicleCardFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.photoPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-muted);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.placaBold {
+  font-weight: var(--font-bold);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.actionLink {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.actionLink:hover {
+  color: var(--color-primary-hover);
+}
+
+.colorDot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  vertical-align: middle;
+  margin-right: var(--space-1);
+}

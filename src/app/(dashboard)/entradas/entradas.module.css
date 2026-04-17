@@ -1,0 +1,235 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: var(--content-max-width);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.headerTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.statusBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  background: var(--color-bg-muted);
+  color: var(--color-text-secondary);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.statusBadge:hover {
+  background: var(--color-border);
+}
+
+.statusBadgeActive {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.statusCount {
+  font-weight: var(--font-bold);
+}
+
+/* Kanban - desktop */
+.kanban {
+  display: none;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .kanban {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(200px, 1fr));
+  }
+}
+
+.kanbanColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 200px;
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-muted);
+}
+
+.columnTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.columnCount {
+  font-size: var(--text-xs);
+  background: var(--color-bg);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-bold);
+  color: var(--color-text-muted);
+}
+
+.kanbanCard {
+  cursor: pointer;
+  transition: box-shadow var(--transition-fast);
+}
+
+.kanbanCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cardPlaca {
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+}
+
+.cardVehicle {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.cardClient {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+}
+
+.cardTime {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.mechanicAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+}
+
+.cardProblem {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.urgencyDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  margin-right: var(--space-1);
+}
+
+.urgencyNormal {
+  background: var(--color-success);
+}
+
+.urgencyUrgente {
+  background: var(--color-warning);
+}
+
+.urgencyEmergencia {
+  background: var(--color-danger);
+}
+
+/* Mobile list */
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .mobileList {
+    display: none;
+  }
+}
+
+.mobileFilters {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .mobileFilters {
+    display: none;
+  }
+}
+
+.mobileCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mobileCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobileCardMeta {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.mobileCardFooter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}

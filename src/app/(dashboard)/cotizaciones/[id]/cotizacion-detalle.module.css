@@ -1,0 +1,249 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: var(--content-max-width);
+}
+
+.backLink {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.headerTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cotizacionCode {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.headerMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.headerActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.cardTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.infoLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.infoValue {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+}
+
+/* Items table */
+.itemsTableWrap {
+  overflow-x: auto;
+}
+
+.montoCell {
+  font-weight: var(--font-semibold);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.tipoBadge {
+  font-size: var(--text-xs);
+  text-transform: capitalize;
+}
+
+/* Totals */
+.totalsSection {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-4);
+}
+
+.totalsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 240px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  padding: var(--space-1) 0;
+}
+
+.totalRowGrand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  padding: var(--space-2) 0;
+  border-top: 2px solid var(--color-border);
+  margin-top: var(--space-2);
+}
+
+/* Dates */
+.datesRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+/* Notes */
+.notesText {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  white-space: pre-wrap;
+}
+
+/* Mobile items */
+.mobileItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .mobileItems {
+    display: none;
+  }
+}
+
+.mobileItem {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.mobileItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-1);
+}
+
+.mobileItemDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.mobileItemDetail {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.desktopTable {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopTable {
+    display: block;
+  }
+}
+
+/* Column stack */
+.columnStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Print styles */
+@media print {
+  .backLink,
+  .headerActions {
+    display: none !important;
+  }
+
+  .page {
+    gap: var(--space-3);
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mobileItems {
+    display: none !important;
+  }
+
+  .desktopTable {
+    display: block !important;
+  }
+}

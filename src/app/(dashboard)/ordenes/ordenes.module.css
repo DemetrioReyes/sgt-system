@@ -1,0 +1,267 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: var(--content-max-width);
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .headerRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mechanicFilters {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.mechanicAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.mechanicAvatar:hover,
+.mechanicAvatarActive {
+  border-color: var(--color-primary);
+}
+
+.viewToggle {
+  display: flex;
+  gap: var(--space-1);
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-md);
+  padding: 2px;
+}
+
+.viewBtn {
+  padding: var(--space-1) var(--space-3);
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.viewBtnActive {
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Kanban board - desktop */
+.kanban {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .kanban {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    align-items: start;
+  }
+}
+
+.kanbanColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  min-height: 300px;
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: var(--space-1);
+}
+
+.columnTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+}
+
+.columnCount {
+  font-size: var(--text-xs);
+  background: var(--color-bg-muted);
+  color: var(--color-text-muted);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.columnPendiente .columnHeader {
+  border-bottom-color: var(--color-warning);
+}
+
+.columnProgreso .columnHeader {
+  border-bottom-color: var(--color-primary);
+}
+
+.columnEspera .columnHeader {
+  border-bottom-color: #a855f7;
+}
+
+.columnCompletada .columnHeader {
+  border-bottom-color: var(--color-success);
+}
+
+/* Kanban card */
+.kanbanCard {
+  padding: var(--space-3);
+  cursor: pointer;
+  transition: box-shadow var(--transition-fast);
+}
+
+.kanbanCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cardOrderId {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.cardVehicle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+}
+
+.cardPlaca {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.cardClient {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+  gap: var(--space-2);
+}
+
+.cardMechanic {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+  flex-shrink: 0;
+}
+
+.cardProgress {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  transition: width var(--transition-base);
+}
+
+.progressFillWarning {
+  background: var(--color-warning);
+}
+
+.progressFillSuccess {
+  background: var(--color-success);
+}
+
+.progressText {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.cardTime {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.timeOver {
+  color: var(--color-danger);
+  font-weight: var(--font-medium);
+}
+
+/* Mobile: list with tabs */
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .mobileList {
+    display: none;
+  }
+}
+
+.mobileCardStatus {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}

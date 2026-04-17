@@ -1,0 +1,170 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.passwordField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.passwordLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+}
+
+.passwordInputWrapper {
+  position: relative;
+}
+
+.passwordInput {
+  min-height: var(--touch-min);
+  padding: var(--space-3);
+  padding-right: var(--space-10);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  background: var(--color-bg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+.passwordInput:hover:not(:disabled) {
+  border-color: var(--color-border-hover);
+}
+
+.passwordInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.passwordInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.passwordToggle {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  padding: var(--space-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.passwordToggle:hover {
+  color: var(--color-text-secondary);
+}
+
+/* Strength indicator */
+.strengthBar {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.strengthSegment {
+  flex: 1;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  transition: background var(--transition-fast);
+}
+
+.strengthSegment.active0 {
+  background: var(--color-danger);
+}
+
+.strengthSegment.active1 {
+  background: var(--color-warning);
+}
+
+.strengthSegment.active2 {
+  background: var(--color-warning);
+}
+
+.strengthSegment.active3 {
+  background: var(--color-success);
+}
+
+.strengthSegment.active4 {
+  background: var(--color-success);
+}
+
+/* Requirements list */
+.requirements {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.requirement.met {
+  color: var(--color-success);
+}
+
+.requirementIcon {
+  flex-shrink: 0;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.alert {
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+  text-align: center;
+  padding: var(--space-3);
+  background: var(--color-danger-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-danger);
+}
+
+.successAlert {
+  font-size: var(--text-sm);
+  color: var(--color-success);
+  text-align: center;
+  padding: var(--space-3);
+  background: var(--color-success-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-success);
+}

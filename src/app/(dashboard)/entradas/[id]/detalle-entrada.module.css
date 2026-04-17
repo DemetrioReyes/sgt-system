@@ -1,0 +1,341 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: var(--content-max-width);
+}
+
+.backLink {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.headerTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.entradaCode {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.headerMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.headerActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.timeInShop {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-warning);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.cardTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapsibleToggle {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.infoLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.infoValue {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+}
+
+.symptomsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.description {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-top: var(--space-3);
+}
+
+/* Mechanic card */
+.mechanicRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mechanicAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+}
+
+.mechanicInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mechanicName {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.mechanicRole {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: var(--space-4);
+  padding-left: var(--space-4);
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--space-6) * -1 + 5px);
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  border: 2px solid var(--color-bg);
+  z-index: 1;
+}
+
+.timelineItem::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--space-6) * -1 + 9px);
+  top: 16px;
+  width: 2px;
+  height: calc(100% - 10px);
+  background: var(--color-border);
+}
+
+.timelineItem:last-child::after {
+  display: none;
+}
+
+.timelineDate {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.timelineText {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+/* Diagnostic section */
+.diagnosticSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.photoUploadPlaceholder {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .photoUploadPlaceholder {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.photoBox {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  background: var(--color-bg-subtle);
+}
+
+/* Related actions */
+.relatedLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.relatedLink {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.relatedLink:hover {
+  text-decoration: underline;
+}
+
+/* Panel asignar mecanico */
+.mecanicoPanel {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.mecanicoPanelTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+.mecanicoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mecanicoOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  text-align: left;
+  width: 100%;
+}
+
+.mecanicoOption:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-subtle);
+}
+
+.mecanicoSelected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.mecanicoAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+.mecanicoNombre {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.mecanicoRol {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}

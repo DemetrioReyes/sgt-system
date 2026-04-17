@@ -1,0 +1,148 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: var(--content-max-width);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.categoryIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.iconBlue {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.iconGreen {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.iconOrange {
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+.iconRed {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.categoryTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+}
+
+.reportList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.reportItem {
+  padding: var(--space-3) var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.reportItem:last-child {
+  border-bottom: none;
+}
+
+.reportItem:hover {
+  background: var(--color-bg-subtle);
+  color: var(--color-primary);
+}
+
+.reportItem::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+.reportItem:hover::before {
+  background: var(--color-primary);
+}
+
+.reportLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.reportLink:hover {
+  color: var(--color-primary);
+}
+
+.reportItemDisabled {
+  cursor: default;
+  opacity: 0.6;
+  justify-content: space-between;
+}
+
+.reportItemDisabled:hover {
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+.reportItemDisabled:hover::before {
+  background: var(--color-border);
+}
